@@ -1,0 +1,11 @@
+
+.weather-app-wrapper{
+  max-width: 700px;
+  margin: 30 auto;
+  padding: 20px;
+  border: 2px solid #d2e5ff;
+  border-radius: 5px;
+  margin:50px 50px;
+  box-shadow: #164f9d
+};
+
