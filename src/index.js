@@ -14,7 +14,11 @@ function formatDate(timestamp) {
     let day = days[date.getDay()];
     return `${day} ${hours}: ${minutes}`;
 }
-
+/* function getForecast(coordinates) {
+    let apiKey = `24b6dfe102oata11d30fb9f9e97168f3`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=$onecall?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=24b6dfe102oata11d30fb9f9e97168f3&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
+} */
 // Main data Function
 function displayTemperature(response) {
     console.log(response.data);
@@ -33,12 +37,22 @@ function displayTemperature(response) {
     windElement.innerHTML = Math.round (response.data.wind.speed);
     dateElement.innerHTML = formatDate(response.data.time*1000);
     iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
-    iconElement.setAttribute(
-        "alt", response.data.condition.description);
-  
+    iconElement.setAttribute("alt", response.data.condition.description);
 }
+
+function search(city) {
 let apiKey = `24b6dfe102oata11d30fb9f9e97168f3`;
-let city = "athens"
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=24b6dfe102oata11d30fb9f9e97168f3&units=metric
-`;
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=24b6dfe102oata11d30fb9f9e97168f3&units=metric`;
 axios.get(apiUrl).then(displayTemperature);
+}
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    search(cityInputElement.value);
+    console.log(cityInputElement.value);
+
+}
+search("oxford");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit",handleSubmit);
