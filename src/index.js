@@ -32,10 +32,13 @@ function displayTemperature(response) {
     humidityElement.innerHTML = response.data.temperature.humidity;
     windElement.innerHTML = Math.round (response.data.wind.speed);
     dateElement.innerHTML = formatDate(response.data.time*1000);
-    iconElement.setAttribute ("src",`http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
+    iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
+    iconElement.setAttribute(
+        "alt", response.data.condition.description);
   
 }
 let apiKey = `24b6dfe102oata11d30fb9f9e97168f3`;
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=London&key=24b6dfe102oata11d30fb9f9e97168f3&units=metric
+let city = "athens"
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=24b6dfe102oata11d30fb9f9e97168f3&units=metric
 `;
 axios.get(apiUrl).then(displayTemperature);
