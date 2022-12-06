@@ -1,4 +1,15 @@
-// Main temperature Function
+//Date Formating Function
+function formatDate(timestamp) {
+    //Will calculate the time & date 
+    let date = new Date(timestamp);
+    let hours = date.getHours(); 
+    let minutes = date.getMinutes();
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let day = days[date.getDay()];
+    return `${day} ${hours}: ${minutes}`;
+}
+
+// Main data Function
 function displayTemperature(response) {
     console.log(response.data);
     let temperatureElement = document.querySelector("#temperature");
@@ -14,7 +25,7 @@ function displayTemperature(response) {
     descriptionElement.innerHTML = response.data.condition.description;
     humidityElement.innerHTML = response.data.temperature.humidity;
     windElement.innerHTML = Math.round (response.data.wind.speed);
-    dateElement.innerHTML = response.data.time;
+    dateElement.innerHTML = formatDate(response.data.time*1000);
     iconElement.innerHTML = response.data.condition.icon;
 }
 let apiKey = `24b6dfe102oata11d30fb9f9e97168f3`;
