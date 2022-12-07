@@ -14,11 +14,43 @@ function formatDate(timestamp) {
     let day = days[date.getDay()];
     return `${day} ${hours}: ${minutes}`;
 }
-/* function getForecast(coordinates) {
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+    //console.log(weatherForecast);
+    let forecastHTML = `<div class="row">`;
+    let days = ["Thu", "Fri", "Sat", "Sun"];
+    days.forEach(function (day) { 
+
+
+    
+        forecastHTML = forecastHTML +`
+        <div class="col-2">
+                            <div class="weather-forecast-date">${day}</div>
+                            <img
+                              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png" alt=""width="36"
+                              alt=""
+                              width="42"
+                            />
+                            <div class="weather-forecast-temperatures">
+                              <span class="weather-forecast-temperature-max"> 18° </span>
+                              <span class="weather-forecast-temperature-min"> 12° </span>
+                            </div>
+                          </div>
+    `;
+});
+    
+  
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML =forecastHTML;
+    //console.log(forecastHTML);
+  }
+
+function getForecast(coordinates) {
     let apiKey = `24b6dfe102oata11d30fb9f9e97168f3`;
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=$onecall?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=24b6dfe102oata11d30fb9f9e97168f3&units=metric`;
     axios.get(apiUrl).then(displayForecast);
-} */
+    console.log(apiUrl);
+} 
 // Main data Function
 function displayTemperature(response) {
     console.log(response.data);
@@ -40,6 +72,8 @@ function displayTemperature(response) {
     dateElement.innerHTML = formatDate(response.data.time*1000);
     iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
     iconElement.setAttribute("alt", response.data.condition.description);
+    //console.log(response.data.coordinates);
+
 }
 
 function search(city) {
@@ -86,3 +120,7 @@ celsiusLink.addEventListener("click", displaycelsiusTemperature);
 
 
 search("oxford");
+displayForecast();
+
+
+
