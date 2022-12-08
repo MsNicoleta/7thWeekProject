@@ -14,18 +14,19 @@ function formatDate(timestamp) {
     let day = days[date.getDay()];
     return `${day} ${hours}: ${minutes}`;
 }
-function displayForecast() {
+// Future days forecast
+function displayForecast(response) {
+    // let forecast = 
+    console.log(response.data.daily);  
     let forecastElement = document.querySelector("#forecast");
-    //console.log(weatherForecast);
+    
     let forecastHTML = `<div class="row">`;
     let days = ["Thu", "Fri", "Sat", "Sun"];
-    days.forEach(function (day) { 
-
-
+    days.forEach(function (forecastDay) { 
     
         forecastHTML = forecastHTML +`
         <div class="col-2">
-                            <div class="weather-forecast-date">${day}</div>
+                            <div class="weather-forecast-date">${forecastDay.time}</div>
                             <img
                               src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png" alt=""width="36"
                               alt=""
@@ -47,13 +48,13 @@ function displayForecast() {
 
 function getForecast(coordinates) {
     let apiKey = `24b6dfe102oata11d30fb9f9e97168f3`;
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=$onecall?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=24b6dfe102oata11d30fb9f9e97168f3&units=metric`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=24b6dfe102oata11d30fb9f9e97168f3&units=metric`;
     axios.get(apiUrl).then(displayForecast);
     console.log(apiUrl);
 } 
 // Main data Function
 function displayTemperature(response) {
-    console.log(response.data);
+    let forecast = response.data;
     let temperatureElement = document.querySelector("#temperature");
     let cityElement = document.querySelector("#city");
     let descriptionElement = document.querySelector("#description");
@@ -72,7 +73,7 @@ function displayTemperature(response) {
     dateElement.innerHTML = formatDate(response.data.time*1000);
     iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
     iconElement.setAttribute("alt", response.data.condition.description);
-    //console.log(response.data.coordinates);
+    console.log(response.data.coordinates);
 
 }
 
@@ -120,7 +121,7 @@ celsiusLink.addEventListener("click", displaycelsiusTemperature);
 
 
 search("oxford");
-displayForecast();
+//displayForecast();
 
 
 
