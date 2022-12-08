@@ -16,8 +16,7 @@ function formatDate(timestamp) {
 }
 // Future days forecast
 function displayForecast(response) {
-    // let forecast = 
-    console.log(response.data.daily);  
+   //console.log(response.data.daily); // it doesnt accespt or show me the object with all the details of the API   ( it all works until here)
     let forecastElement = document.querySelector("#forecast");
     
     let forecastHTML = `<div class="row">`;
@@ -50,7 +49,8 @@ function getForecast(coordinates) {
     let apiKey = `24b6dfe102oata11d30fb9f9e97168f3`;
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=24b6dfe102oata11d30fb9f9e97168f3&units=metric`;
     axios.get(apiUrl).then(displayForecast);
-    console.log(apiUrl);
+    console.log(apiUrl); // here it the console log that doesn't show up in the console. 
+    
 } 
 // Main data Function
 function displayTemperature(response) {
@@ -121,7 +121,7 @@ celsiusLink.addEventListener("click", displaycelsiusTemperature);
 
 
 search("oxford");
-//displayForecast();
+displayForecast();
 
 
 
