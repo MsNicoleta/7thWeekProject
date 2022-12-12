@@ -126,7 +126,7 @@ li:first-letter{
  
 } */
 #body-card{
-  background-color: rgba(36, 36, 36, 0.587);
+  background-color: rgba(36, 36, 36, 0.325);
   border-radius: 15px;
   padding-left: 30px;
   padding-top: 30px;
@@ -138,7 +138,7 @@ li:first-letter{
   align-items: center;
 /*  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);} */
   box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.1);
-  background-color: rgba(36, 36, 36, 0.587);
+  background-color: rgba(36, 36, 36, 0.325);
   
   
 }
@@ -170,21 +170,26 @@ li:first-letter{
   padding: 16px;
 }
 .btn {
-  background-color: white;
-color: #2525259c;}
+  background-color: rgba(255, 255, 255, 0.664);
+  border: rgba(255, 255, 255, 0.664);
+  color: #252525b8;
+}
 .btn:hover{
-  background-color: #aac2ff;
-border: #00000000;}
+  background-color: #aac2ffb6;
+  border: #00000000;}
 
 .form-control{
   background-color: #00000050;
   border: 1px solid #00000050;
+  border-radius: 4px;
+  color: #ffffff;
   
   color: whitesmoke;
   
 }
 .form-control:focus{
-  background-color: #aac2ff;;
+  background-color: #c5d4fcae;;
+  color: black;
 }
 
 .signature{
