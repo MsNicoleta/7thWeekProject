@@ -16,9 +16,15 @@
   </head>
   <!--Body-->
   <body>
+    <!-- The video -->
+<video autoplay muted loop id="myVideo">
+  <source src="/images/pexels-rostislav-uzunov-7513671.mp4" type="video/mp4">
+</video>
       <div class="container">
+         
             <div class="weather-app-wrapper">
               <div class="weather-app">
+               
                 <div class="card-body">
                 <a href="" target="_blank" rel="noopener noreferrer">
                  <!--  <img src="images/logo.png" class="logo"style="width:3em; height:3em;" alt="The Logo"> -->
@@ -38,10 +44,11 @@
                   </div>
                 </form>
                 <br> <!-- The searched city -->
+                <div class="card" id="body-card">
                 <div class="overview">
                   <h1 id="city"></h1>
                   <ul>
-                    <li>Last updated: <span id="date"></span></li>
+                    <li id="updatenote">Last updated: <span id="date"></span></li>
                     <li id="description"></li>
                   </ul>
                 </div>
@@ -68,6 +75,7 @@
                 </div>
                 <br>
               </div>
+            </div>
                 <!-- Future 5  days forecast -->
                 <div class="weather-forecast" id="forecast">
               
@@ -98,6 +106,7 @@
                 </div>
               </div>
                 <br>
+              
             </div>
             <!--  The bottom signature  -->
             

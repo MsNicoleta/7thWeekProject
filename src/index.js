@@ -40,13 +40,13 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 //  let days = ['Thu', 'Fri', 'Sat', 'Sun'];
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) { 
+    if (index < 5) { 
     forecastHTML =
       forecastHTML +
       `
       
         <div class="col-2">
-        <div class="card">
+        <div class="card" id="forecast-cards">
         <br>
                             <div class="weather-forecast-date">${formatDay(forecastDay.time)}</div>
                             
