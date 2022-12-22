@@ -158,10 +158,3 @@ search('paris');
 // displayForecast();
 
 
-//video 
-
-const video = document.querySelector("#myVideo");
-
-// Slow it to 50% speed
-video.playbackRate = 0.3; 
-
