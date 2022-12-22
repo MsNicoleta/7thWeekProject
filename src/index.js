@@ -51,7 +51,7 @@ function displayForecast(response) {
                             <div class="weather-forecast-date">${formatDay(forecastDay.time)}</div>
                             
                             <img
-                              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png" alt=""width="100"
+                              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png" alt=""width="60"
                               alt=""
                               width="42"
                             />
@@ -157,4 +157,11 @@ celsiusLink.addEventListener('click', displaycelsiusTemperature);
 search('paris');
 // displayForecast();
 
+
+//video 
+
+const video = document.querySelector("#myVideo");
+
+// Slow it to 50% speed
+video.playbackRate = 0.3; 
 

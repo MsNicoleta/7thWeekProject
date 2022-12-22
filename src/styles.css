@@ -74,10 +74,13 @@ body {
 
 input:checked + .slider {
   background-color: #dee9fc;
+  
 }
 
 input:checked + .slider:before {
   transform: translateX(26px);
+  background-color: #16274f;
+
 }
 
 .slider.round {
@@ -86,9 +89,17 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+  color: #dee9fc;
 }
 /* Toggle switch end */
+.toggle-table{
 
+}
+.light-dark{
+  font-size: 10px;
+  
+  padding-right: 0%;
+}
 
 h1 {
   color: #ededec;
@@ -192,12 +203,11 @@ li:first-letter{
  
 }
 #forecast-cards{
-  border-radius: 15px;
+  border-radius: 10px;
   align-items: center;
 /*  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);} */
-  box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.1);
-  background-color: rgba(36, 36, 36, 0.325);
-  
+  background-color: #17264d;
+  margin-bottom: 20px;
   
 }
 .weather-forecast-date {
@@ -228,31 +238,21 @@ li:first-letter{
  padding-left: 17px;
  padding-right: 17px;
 }
-.btn {
-  background-color: #e6a920;
-  border: rgba(255, 255, 255, 0);
-  color: #292929b1;
-}
-/* .btn:hover{
-  background-color: #aac2ffb6;
-  border: #00000000;}
-   */
-
 
 .form-control{
   background-color: #17264d;
-  border: 1px solid #e6ab2047;
+  border: 1px solid #e6ab20;
   border-radius: 4px;
-  color: whitesmoke;
+  color: grey ;
   
 }
 .form-control:focus{
-  background-color: whitesmoke;
-  color: black;
+  background-color: #17264d;
+  color: #17264d ;
 }
 
 .signature{
-  color: whitesmoke;
+  color: #17264d;
 }
 a{
   color:rgb(76, 76, 255);
