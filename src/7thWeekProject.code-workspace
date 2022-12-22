@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../6-Week/Weather Project"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "7thWeekProject"
+	}
+}
