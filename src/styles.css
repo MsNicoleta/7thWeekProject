@@ -1,8 +1,24 @@
-html{
- /*  background-color: rgba(245, 245, 245, 0.974); */
- background: rgb(107,114,222);
- background: linear-gradient(180deg, rgba(107,114,222,1) 0%, rgba(255,235,206,1) 100%);
+:root{
+
+ --DARK-GRADIENT:
+ background: linear-gradient( 180deg #16274f, #121925);
+/*  background: rgb(1,14,48);
+ background: linear-gradient(180deg, rgba(1,14,48,1) 0%, rgba(22,39,78,1) 100%); */
+--LIGHT-COLOR: #dee9fc;
+--LIGHT-GRADIENT:
+background: rgb(224,236,250);
+background: linear-gradient(180deg, rgba(224,236,250,1) 0%, rgba(255,255,255,1) 100%);
+/* background: rgb(22,39,79);
+background: linear-gradient(222deg, rgba(22,39,79,1) 0%, rgba(18,25,37,1) 100%); */
+--DARK-TEXT-COLOR: #222b41; /*BLUE  #16274f  BLACK #121925 */
+--LIGHT-TEXT-COLOR:#ccd3e9;
+--DARK-BACKGROUND-COLOR: #16274f;
+--BORDER-COLOR: #47587c;
+ 
 }
+
+
+
 /* #myVideo {
   position: fixed;
  
@@ -19,11 +35,63 @@ margin: 0 auto;
 body {
   margin:0 auto;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgba(245, 245, 245, 0);
+  background-color: background: rgb(224,236,250);
+  background: linear-gradient(120deg, rgba(255,255,255,1) 0%, rgba(224,236,250,1) 100%);
+}
+/* toggle switch */
+.switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
 }
 
+.switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #16274f;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #dee9fc;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* Toggle switch end */
+
+
 h1 {
-  color: whitesmoke;
+  color: #ededec;
   font-size: 38px;
   font-weight: 100;
   line-height: 28px;
@@ -69,16 +137,10 @@ li:first-letter{
  margin: 6rem auto;
 }
 .weather-app{
- background:url(/images/pexels-rostislav-uzunov-7513671.mp4);
- background-repeat:no-repeat;
- background-size:cover;
- background-position:center;
- opacity: 100%;
- min-height:400px;
   padding: 20px;
-  border: 2px solid #00000050;
   border-radius: 5px;
-  background-color: rgba(0, 25, 75, 0.213);
+  background-color:  background: rgb(1,14,48);
+  background: linear-gradient(222deg, rgba(1,14,48,1) 0%, rgba(22,39,78,1) 100%); 
   backdrop-filter: blur(10px);
 }
 
@@ -121,13 +183,13 @@ li:first-letter{
   color: #333;
  
 } */
-#body-card{
-  background-color: rgba(36, 36, 36, 0.325);
+#forecasr-now{
+  
   border-radius: 15px;
   padding-left: 30px;
   padding-top: 30px;
   margin-bottom: 10px;
-  margin:0 auto
+ 
 }
 #forecast-cards{
   border-radius: 15px;
@@ -167,7 +229,7 @@ li:first-letter{
  padding-right: 17px;
 }
 .btn {
-  background-color: rgb(248, 247, 238);
+  background-color: #e6a920;
   border: rgba(255, 255, 255, 0);
   color: #292929b1;
 }
@@ -178,8 +240,8 @@ li:first-letter{
 
 
 .form-control{
-  background-color: rgba(51, 51, 51, 0.547);
-  border: 1px solid #333;
+  background-color: #17264d;
+  border: 1px solid #e6ab2047;
   border-radius: 4px;
   color: whitesmoke;
   
